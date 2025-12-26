@@ -1,24 +1,28 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
+import React, { useEffect } from "react";
+import { Slot, SplashScreen, Stack } from "expo-router";
+import {useFonts} from 'expo-font'
+import "./global.css";
 
-import { useColorScheme } from '@/hooks/use-color-scheme';
+SplashScreen.preventAutoHideAsync()
 
-export const unstable_settings = {
-  anchor: '(tabs)',
+const RootLAyout = () => {
+
+  const[loaded,error] = useFonts({
+    'WorkSans-Black':require('../assets/WorkSans-Black.ttf'),
+    'WorkSans-Medium':require('../assets/WorkSans-Medium.ttf'),
+    'WorkSans-Light':require('../assets/WorkSans-Light.ttf')
+  })
+  
+
+  useEffect(() => {
+    if(error) throw error
+    if(loaded) SplashScreen.hideAsync()
+    },[loaded,error])
+    
+    if(!loaded && !error) return null
+
+    //------- navegacion principal va en el stack(pila)-----
+    return (<Slot />)
 };
 
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
-
-  return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
-  );
-}
+export default RootLAyout;

@@ -23,7 +23,8 @@
     },
     "web": {
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/favicon.png",
+      "bundler": "metro"
     },
     "plugins": [
       "expo-router",
@@ -38,7 +39,25 @@
             "backgroundColor": "#000000"
           }
         }
-      ]
+      ],
+      ["expo-font",
+        {
+          "fonts": ["./assets/WorkSans-Black.ttf","./assets/WorkSans-Light.ttf","./assets/WorkSans-Medium.ttf"],
+          "android": {
+            "fonts": [
+              {
+                "fontFamily": "Source Serif 4",
+                "fontDefinitions": [
+                  {
+                    "path": "./path/to/SourceSerif4-ExtraBold.ttf",
+                    "weight": 800
+                  }
+                ]
+              }
+            ]
+          }
+        }]
+      
     ],
     "experiments": {
       "typedRoutes": true,
