@@ -8,7 +8,7 @@ const productsScreen = () => {
     <View className=" flex flex-1">
       <FlatList 
         data={products} 
-        keyExtractor={(item) => item.id} // normalmente son string
+        keyExtractor={(item) => item.id}
         renderItem={({item}) => (
           <View className=" mt-8">
             <Text className=" text-2xl font-work-black">{item.title}</Text>
@@ -16,9 +16,9 @@ const productsScreen = () => {
             <View className=" flex flex-row justify-between">
               <Text className=" font-work-black">{item.price}</Text>
               <Link 
-                href={`/(stack)/products/${item.id}`}
+                href={`/tabs/(stack)/products/${item.id}`}
                 className=" text-primary underline-offset-1"
-                >ver detalles </Link>
+                ><Text>ver detalles</Text></Link>
             </View>
           </View>
           

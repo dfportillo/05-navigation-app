@@ -4,7 +4,18 @@ import {FontAwesome} from '@expo/vector-icons'
 
 const TabsLayout = () => {
   return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: 'blue' }}>
+    <Tabs screenOptions={{ 
+      headerShown:false,
+      tabBarActiveTintColor: 'blue',
+      
+      }}>
+      <Tabs.Screen
+        name="(stack)"
+        options={{
+          title: 'stack',
+          tabBarIcon: ({ color }) => <FontAwesome size={28} name="adjust" color={color} />,
+        }}
+      />
       <Tabs.Screen
         name="home/index"
         options={{

@@ -7,7 +7,7 @@ const StacklLayout = () => {
     <Stack
       screenOptions={
         {
-          // headerShown:false
+          headerShown:false,
           headerShadowVisible:false,
           contentStyle:{
             backgroundColor:'white'
@@ -33,7 +33,7 @@ const StacklLayout = () => {
           title: "perfil",
         }}
       />
-      <Stack.Screen // configuacion bastante amigable
+      <Stack.Screen 
         name="settings/index"
         options={{
           title: "configuracion",

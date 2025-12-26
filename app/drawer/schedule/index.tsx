@@ -1,12 +1,12 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-const HomeScreen = () => {
+const scheduleScreen = () => {
   return (
     <View>
-      <Text>homeScreen</Text>
+      <Text>scheduleScreen</Text>
     </View>
   );
 };
 
-export default HomeScreen;
+export default scheduleScreen;
