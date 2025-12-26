@@ -8,6 +8,7 @@ const DrawerLayout = () => {
     <Drawer
       drawerContent={CustomDrawer}
       screenOptions={{
+        // headerShown:false,
         overlayColor:'rgba(0,0,0,0.4)',
         drawerActiveTintColor:'indigo',
         headerShadowVisible:false,
@@ -20,7 +21,6 @@ const DrawerLayout = () => {
         name="user/index" // This is the name of the page and must match the url from root
         options={{
           drawerLabel: 'Usuario',
-          
           title: 'Usuario',
           drawerIcon: ({color,size}) => (
             <Ionicons name="person-circle-sharp" size={size} color={color}/>
@@ -34,6 +34,17 @@ const DrawerLayout = () => {
           title: 'Horarios',
           drawerIcon: ({color,size}) => (
             <Ionicons name="calendar-outline" size={size} color={color}/>
+          )
+        }}
+      />
+      <Drawer.Screen
+        name="(tabs)"
+        options={{
+          headerShown:false,
+          drawerLabel: 'Tabs',
+          title: 'Tabs',
+          drawerIcon: ({color,size}) => (
+            <Ionicons name="albums-outline" size={size} color={color}/>
           )
         }}
       />
